@@ -1,3 +1,30 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+
+async function deleteActivity(id) {
+  const res = await fetch(`http://127.0.0.1:8000/api/menu/${id}/`, {
+    method: "DELETE",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to retrieve activity");
+  }
+  return Promise.resolve();
+}
+
+/**
+ * Fetches menu data from the server.
+ */
+async function getData() {
+  const res = await fetch("http://127.0.0.1:8000/api/activities/");
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+
 import Image from "next/image";
 
 export default function Home() {
