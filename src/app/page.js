@@ -1,3 +1,5 @@
+// hello i'm writing as oomment
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -23,6 +25,8 @@ async function getData() {
   }
   return res.json();
 }
+
+
 
 
 import Image from "next/image";
